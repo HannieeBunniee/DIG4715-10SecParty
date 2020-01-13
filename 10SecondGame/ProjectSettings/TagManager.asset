@@ -6,6 +6,8 @@ TagManager:
   tags:
   - background
   - Bunny
+  - Carrot
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -46,9 +48,9 @@ TagManager:
   - name: Background
     uniqueID: 922958679
     locked: 0
-  - name: Player
-    uniqueID: 2287840481
-    locked: 0
   - name: Pickups
     uniqueID: 705350699
+    locked: 0
+  - name: Player
+    uniqueID: 2287840481
     locked: 0
