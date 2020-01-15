@@ -48,6 +48,9 @@ TagManager:
   - name: Background
     uniqueID: 922958679
     locked: 0
+  - name: tiles
+    uniqueID: 2267674219
+    locked: 0
   - name: Pickups
     uniqueID: 705350699
     locked: 0
