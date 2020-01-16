@@ -17,8 +17,17 @@ public class CameraController : MonoBehaviour
     }
 
     
-    void Update()
+    void LateUpdate()
     {
         transform.position = player.transform.position + offset;
+
+
+        //make the escape key as quit game
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
+
+
 }

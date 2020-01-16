@@ -27,16 +27,19 @@ public class PlayerController : MonoBehaviour
     public AudioClip musicClipWin;
     public AudioClip musicClipLose;
     public AudioClip musicBackground;
+    public AudioClip musicClipIntro;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        
         score = 0;
         winText.text = "";
         countdownText.text = "";
-        musicSource.clip = musicBackground;
+        musicSource.clip = musicClipIntro;
         musicSource.Play();
+        Invoke("BackgroundMusic", 2);
         timer = true;
         //gameOver = false;
         SetScoreText();
@@ -45,35 +48,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.AddForce(movement * speed);
+        Invoke("PlayerMovement", 2); //wait 2 second before letting player move
     }
+
 
     private void Update()
     {
-        if (timer == true) //countdown time code
-        {
-            timeLeft -= Time.deltaTime;
-            countdownText.text = (timeLeft).ToString("Time Left: 0");
-            if (score == 5)
-            {
-                timer = false;
-            }
-            else if (timeLeft < 0 && score <5)
-            {
-                timer = false;
-                Destroy(GameObject.FindWithTag("Bunny"));
-                musicSource.Stop();
-                musicSource.loop = true;
-                musicSource.clip = musicClipLose;
-                musicSource.Play();
-                winText.text = "Game Over :P!";
-            }
-            
-        }
+        Invoke("TimerCountDown", 2); //make the timer function to wait 2 sec
     }
+    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -106,10 +89,49 @@ public class PlayerController : MonoBehaviour
         {
             winText.text = "You win! Made by Hanniee Tran.";
             musicSource.Stop();
-            musicSource.loop = true;
+            musicSource.loop = false;
             musicSource.clip = musicClipWin;
             musicSource.Play();
         }
+    }
+
+    void TimerCountDown()
+    {
+        if (timer == true) //countdown time code
+        {
+            timeLeft -= Time.deltaTime;
+            countdownText.text = (timeLeft).ToString("Time Left: 0");
+            if (score == 5)
+            {
+                timer = false;
+            }
+            else if (timeLeft < 0 && score < 5)
+            {
+                timer = false;
+                Destroy(GameObject.FindWithTag("Bunny"));
+                musicSource.Stop();
+                musicSource.loop = false;
+                musicSource.clip = musicClipLose;
+                musicSource.Play();
+                winText.text = "Game Over :P!";
+            }
+
+        }
+    }
+
+    void PlayerMovement() //player's movement codes
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        rb2d.AddForce(movement * speed);
+    }
+
+    void BackgroundMusic()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicBackground;
+        musicSource.Play();
     }
 
    
