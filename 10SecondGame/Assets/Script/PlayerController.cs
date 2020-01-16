@@ -22,12 +22,14 @@ public class PlayerController : MonoBehaviour
     private int score;
     private bool timer;
     private bool gameOver;
+    private GameObject bunniee;
 
     public AudioSource musicSource;
     public AudioClip musicClipWin;
     public AudioClip musicClipLose;
     public AudioClip musicBackground;
     public AudioClip musicClipIntro;
+    public AudioClip musicCoin;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         countdownText.text = "";
         musicSource.clip = musicClipIntro;
         musicSource.Play();
+        //musicSource.Stop();
         Invoke("BackgroundMusic", 2);
         timer = true;
         //gameOver = false;
@@ -55,6 +58,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Invoke("TimerCountDown", 2); //make the timer function to wait 2 sec
+        
     }
     
 
@@ -62,6 +66,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag ("Carrot"))
         {
+            musicSource.PlayOneShot(musicCoin); //use this so the audio play on top of other
+            musicSource.loop = false;
             score = score + 1; //plus 1 score if pick up a carrot
             other.gameObject.SetActive(false); //disable visual of the carrot
             SetScoreText();
@@ -108,7 +114,9 @@ public class PlayerController : MonoBehaviour
             else if (timeLeft < 0 && score < 5)
             {
                 timer = false;
-                Destroy(GameObject.FindWithTag("Bunny"));
+                //Destroy(GameObject.FindWithTag("Bunny"));
+                bunniee = GameObject.FindWithTag("Bunny");
+                bunniee.SetActive(false);
                 musicSource.Stop();
                 musicSource.loop = false;
                 musicSource.clip = musicClipLose;

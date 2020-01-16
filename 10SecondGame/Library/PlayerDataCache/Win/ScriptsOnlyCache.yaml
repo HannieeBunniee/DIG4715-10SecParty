@@ -52,19 +52,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9674}
     - Class: 114
-      Script: {instanceID: 9838}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 10278}
+      Script: {instanceID: 10276}
     - Class: 114
-      Script: {instanceID: 10708}
+      Script: {instanceID: 10706}
     - Class: 114
-      Script: {instanceID: 10886}
+      Script: {instanceID: 10884}
     - Class: 114
-      Script: {instanceID: 11126}
+      Script: {instanceID: 11124}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 11498}
+      Script: {instanceID: 11496}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -364,7 +364,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: cf6fcde94b953826a4929da7a559e09a
+      Hash: 1762709823e171df200f9a8f3213dd9e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -524,6 +524,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 42b20bd6b93d2df4ca53076c9b023c66
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DemoScene
   platform: 5
   scenePathNames:
   - Assets/Scenes/10SecBunniee.unity
