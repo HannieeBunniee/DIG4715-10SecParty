@@ -54,17 +54,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 10276}
+      Script: {instanceID: 10278}
     - Class: 114
-      Script: {instanceID: 10706}
+      Script: {instanceID: 10708}
     - Class: 114
-      Script: {instanceID: 10884}
+      Script: {instanceID: 10886}
     - Class: 114
-      Script: {instanceID: 11124}
+      Script: {instanceID: 11126}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 11160}
     - Class: 114
-      Script: {instanceID: 11496}
+      Script: {instanceID: 11498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -248,6 +248,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 42b20bd6b93d2df4ca53076c9b023c66
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DemoScene
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -524,12 +530,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 42b20bd6b93d2df4ca53076c9b023c66
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DemoScene
   platform: 5
   scenePathNames:
   - Assets/Scenes/10SecBunniee.unity

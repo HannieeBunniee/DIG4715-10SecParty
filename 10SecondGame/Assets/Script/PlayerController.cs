@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     //===Function===
     void SetScoreText()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Carrot(s): " + score.ToString();
         if (score >= 5)
         {
             winText.text = "You win! Made by Hanniee Tran.";
